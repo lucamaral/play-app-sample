@@ -1,11 +1,14 @@
-name := "play-app-sample"
+import play.Project._
 
-version := "1.0-SNAPSHOT"
+name := "play_app_sample"
+
+version := "0.0.0-SNAPSHOT"
 
 libraryDependencies ++= Seq(
-  javaJdbc,
-  javaEbean,
-  cache
-)     
+  javaCore,
+  "br.com.handit" % "maven-app-sample" % "0.0.0-SNAPSHOT"
+)
 
-play.Project.playJavaSettings
+playJavaSettings
+
+resolvers += "Nexus Repository" at "http://192.168.25.24:8081/nexus/content/groups/public/"
